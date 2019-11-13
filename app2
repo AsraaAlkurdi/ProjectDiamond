@@ -9,7 +9,7 @@
 import hmac
 import socket
 import ssl
-from mongo import MongoDB
+# from mongo import MongoDB
 import pysftp
 import hashlib
 import sys
@@ -27,15 +27,15 @@ try:
     # Listen on port 8080
     ssl_socket.bind(('localhost', 8080))
     ssl_socket.listen(5)
-    mongoDB = MongoDB()
+  #  mongoDB = MongoDB()
     while True:
         print("Accept connections from outside")
         (clientSocket, address) = ssl_socket.accept()
         print(clientSocket.recv(1024))
 
-        mongoDB.mongoInstance("Test", "Got Connection")
+   #     mongoDB.mongoInstance("Test", "Got Connection")
 
-        mongoDB.mongoInstance("Test", "Got Connection")
+   #     mongoDB.mongoInstance("Test", "Got Connection")
         break
 
     # Hash the JSON payload and append it to the message (HMAC SHA-256)
@@ -90,4 +90,4 @@ try:
 
 except Exception as e:
     print(e)
-    mongoDB.mongoInstance("Test", "Failed to Get Connection")
+#    mongoDB.mongoInstance("Test", "Failed to Get Connection")
