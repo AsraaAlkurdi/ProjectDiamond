@@ -9,7 +9,7 @@
 import hmac
 import socket
 import ssl
-from mongo import MongoDB
+import mongo from MongoDB
 import pysftp
 import hashlib
 import sys
